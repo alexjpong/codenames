@@ -1,0 +1,25 @@
+<div class="layout-row layout-align-space-around-center">
+
+  <h3>Turn: {{turnNumber}}, {{if isRedTurn 'RED' 'BLUE'}}</h3>
+  <h4>RED SCORE: {{redScore}} // BLUE SCORE: {{blueScore}}</h4>
+  {{#unless ended}}
+    {{#paper-button raised=true onClick=(action "endTurn")}}End Turn{{/paper-button}}
+  {{/unless}}
+</div>
+
+
+<div class="layout-row layout-align-space-around-center layout-wrap">
+  {{#each cards as |card|}}
+    {{card-component card=card revealHandler="revealHandler"}}
+  {{/each}}
+
+</div>
+{{#if ended}}
+  <div class="layout-row layout-align-space-around-center">
+    <h1>YOUR GAME ENDED</h1>
+  </div>
+  <div class="layout-row layout-align-space-around-center">
+    <h2>Final Score: RED -- {{redScore}} // BLUE -- {{blueScore}}</h2>
+  </div>
+
+{{/if}}
