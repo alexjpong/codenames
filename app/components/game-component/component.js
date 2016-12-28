@@ -15,8 +15,6 @@ export default Ember.Component.extend({
 
   isBlueTurn: Ember.computed.not('isRedTurn'),
 
-
-
   actions: {
     endTurn() {
       const turnNumber = this.get('turnNumber');

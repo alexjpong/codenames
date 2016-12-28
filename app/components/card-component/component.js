@@ -9,17 +9,14 @@ export default Ember.Component.extend({
   image: Ember.computed('team', function () {
     const base = '/assets/images/';
     const team = this.get('team');
-    
+
     switch (team) {
       case 'red':
         return `${base}red.png`;
-        break;
       case 'blue':
         return `${base}blue.png`;
-        break;
       case 'spy':
         return `${base}spy.png`;
-        break;
       default:
         return `${base}civilian.png`;
     }
